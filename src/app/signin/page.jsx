@@ -1,27 +1,28 @@
 "use client"
 
-import { signIn } from "next-auth/react"
-import { useState } from "react"
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
-export default function SignInPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleLogin = async (e) => {
+    e.preventDefault();
     await signIn("credentials", {
       email,
       password,
       redirect: true,
-      callbackUrl: "/dashboard/add-product",
-    })
-  }
+      callbackUrl: "/dashboard/add-product", // login successful হলে কোথায় যাবে
+    });
+  };
+
 
   return (
    <div className="max-w-md mx-auto mt-20 my-10 p-8 bg-white rounded-2xl shadow-lg">
   <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Sign In</h2>
 
-  <form onSubmit={handleSubmit} className="space-y-5">
+  <form onSubmit={handleLogin} className="space-y-5">
     {/* Email */}
     <div>
       <label className="block text-gray-700 font-medium mb-1">Email</label>
