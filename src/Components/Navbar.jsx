@@ -10,7 +10,7 @@ export default function Navbar() {
   const links = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
-    { name: 'Dashboard', href: '/dashboard/add-product' },
+    { name: 'Add-Product', href: '/dashboard/add-product' },
   ]
 
   return (
@@ -65,7 +65,7 @@ export default function Navbar() {
           open ? 'max-h-60 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
         }`}
       >
-        <ul className="flex flex-col space-y-2 px-4 py-2 bg-base-100 shadow-md rounded-b-md">
+        <ul className="flex flex-col space-y-2 px-4  py-2 bg-base-100 shadow-md rounded-b-md">
           {links.map((link) => (
             <li key={link.href}>
               <Link
