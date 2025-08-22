@@ -36,7 +36,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <Link href="/login" className="px-3 py-2 rounded-md hover:bg-gray-200">
+            <Link href="/signin" className="px-3 py-2 rounded-md hover:bg-gray-200">
               Login
             </Link>
           </li>
@@ -81,7 +81,7 @@ export default function Navbar() {
           ))}
           <li>
             <Link
-              href="/login"
+              href="/signin"
               className="block px-3 py-2 rounded-md hover:bg-gray-200"
               onClick={() => setOpen(false)}
             >
