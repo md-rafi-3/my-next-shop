@@ -1,4 +1,3 @@
-cat > README.md <<EOL
 # NextShop
 
 NextShop is a simple e-commerce style application built with **Next.js 15 (App Router)**. The app includes public and protected pages with authentication using **NextAuth.js**. Users can view products and manage them after logging in.
@@ -13,6 +12,8 @@ NextShop is a simple e-commerce style application built with **Next.js 15 (App R
 - [Getting Started](#getting-started)  
 - [Environment Variables](#environment-variables)  
 - [Optional Enhancements](#optional-enhancements)  
+- [Live Site](#live-site)  
+- [Server Repository](#server-repository)  
 - [License](#license)  
 
 ---
@@ -67,38 +68,52 @@ NextShop is a simple e-commerce style application built with **Next.js 15 (App R
 
 ## **Getting Started**
 
-1. Clone the repository:
-\`\`\`bash
-git clone https://github.com/yourusername/nextshop.git
-cd nextshop
-\`\`\`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/nextshop.git
+   cd nextshop
+   ```
 
-2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-3. Create `.env.local` file in the root folder with the following content:
+3. **Create `.env.local` file** in the root folder with the following content:
+   ```env
+   # NextAuth Configuration
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=Qwb/q+JsMnkASD1ZS7j53Q6oGTOKD92cCRKxI6q+GlY=
 
-\`\`\`env
-# NextAuth Configuration
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=Qwb/q+JsMnkASD1ZS7j53Q6oGTOKD92cCRKxI6q+GlY=
+   # Demo User Credentials
+   DEMO_USER=mdrafiislam9411@gmail.com
+   DEMO_PASS=Rafi@1234
 
-# Demo User Credentials
-DEMO_USER=mdrafiislam9411@gmail.com
-DEMO_PASS=Rafi@1234
+   # IMGBB API Key for image uploads
+   NEXT_PUBLIC_IMGBB_KEY=902df5a8ebe6bd9e8a620ffb7477a857
+   ```
 
-# IMGBB API Key for image uploads
-NEXT_PUBLIC_IMGBB_KEY=902df5a8ebe6bd9e8a620ffb7477a857
-\`\`\`
+4. **Run development server**
+   ```bash
+   npm run dev
+   ```
+   - Starts the app in development mode  
+   - Open [http://localhost:3000](http://localhost:3000)  
 
-4. Run development server:
-\`\`\`bash
-npm run dev
-\`\`\`
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.  
+6. **Start production server**
+   ```bash
+   npm start
+   ```
+
+7. **Run in preview mode (after build)**
+   ```bash
+   npm run preview
+   ```
 
 ---
 
@@ -125,16 +140,17 @@ npm run dev
 ## **Live Site**
 
 Check out the live application here:  
-[NextShop Live Site](https://my-next-shop-swart.vercel.app/)
+👉 [NextShop Live Site](https://my-next-shop-swart.vercel.app/)
 
 ---
 
 ## **Server Repository**
 
 The backend API and server code for NextShop can be found here:  
-[NextShop Server Repository](https://github.com/md-rafi-3/Next-shop-server)
+👉 [NextShop Server Repository](https://github.com/md-rafi-3/Next-shop-server)
+
+---
 
 ## **License**
 
-This project is licensed under the MIT License.  
-EOL
+This project is licensed under the **MIT License**.
