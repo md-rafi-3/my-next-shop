@@ -22,8 +22,8 @@
            const user = {
           id: "1",
           name: "Test User",
-          email: "test@example.com",
-          password: "123456", // demo password
+          email: process.env.DEMO_USER,
+          password: process.env.DEMO_PASS, // demo password
         }; // Replace with actual user lookup
             const isValidPassword = true; // Replace with actual password validation
 

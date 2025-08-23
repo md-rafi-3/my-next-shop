@@ -1,16 +1,20 @@
 'use client'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import LogoutButton from './LogoutButton'
+import { MdLogin } from "react-icons/md";
 
 export default function Navbar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const { data: session } = useSession();
 
   const links = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
-    { name: 'Add-Product', href: '/dashboard/add-product' },
+    
   ]
 
   return (
@@ -35,12 +39,20 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link href="/signin" className="px-3 py-2 rounded-md hover:bg-gray-200">
-              Login
-            </Link>
-          </li>
+
+           {session &&<li><Link href='/dashboard/add-product'  className={`px-3  py-2 rounded-md ${
+                  pathname === '/dashboard/add-product' ? 'bg-primary text-white' : 'hover:bg-gray-200'
+                }`}>Add-Product</Link></li>}
+         
         </ul>
+        
+        <div className='hidden md:block'>
+           {session?<div className='btn btn-outline border-none rounded-md hover:bg-primary hover:text-white'><MdLogin /><LogoutButton></LogoutButton></div>:<div>
+            <Link href="/signin" className="px-3 flex items-center btn btn-outline border-none gap-1  py-2 rounded-md hover:bg-primary hover:text-white">
+              <MdLogin />Login
+            </Link>
+          </div>}
+        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -79,15 +91,13 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href="/signin"
-              className="block px-3 py-2 rounded-md hover:bg-gray-200"
-              onClick={() => setOpen(false)}
-            >
+
+           {session && <li><Link href='/dashboard/add-product'>Add-Product</Link></li>}
+         {session?<li><LogoutButton></LogoutButton></li>:<li>
+            <Link href="/signin" className="px-3 py-2 rounded-md hover:bg-gray-200">
               Login
             </Link>
-          </li>
+          </li>}
         </ul>
       </div>
     </nav>
