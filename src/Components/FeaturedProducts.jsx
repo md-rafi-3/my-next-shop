@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 
 export default async function FeaturedProducts() {
-    const res=await fetch("http://localhost:5000/products")
+    const res=await fetch("https://my-next-shop-express-server.vercel.app/products")
     const allProducts=await res.json()
     const products=allProducts.slice(0,4);
   return (

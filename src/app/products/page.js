@@ -2,7 +2,7 @@ import ProductCard from '@/Components/ProductCard';
 import React from 'react';
 
  const AllProducts  = async() => {
-    const res=await fetch("http://localhost:5000/products")
+    const res=await fetch("https://my-next-shop-express-server.vercel.app/products")
     const products=await res.json()
     return (
         <section className=" pb-10 min-h-screen">
