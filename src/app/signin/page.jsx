@@ -28,7 +28,7 @@ export default function LoginForm() {
       });
 
       // Redirect after alert
-      window.location.href = "/dashboard/add-product";
+      window.location.href = "/products";
     } else {
       // ❌ SweetAlert error
       Swal.fire({
